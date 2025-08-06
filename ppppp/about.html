@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+   /* === Spotify-Inspired Dark Theme === */
+   :root {
+      --spotify-green: #1DB954;
+      --dark-bg: #121212;
+      --card-bg: #181818;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B3B3B3;
+    }
+
+    body {
+      font-family: 'Circular', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-primary);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* === Layout === */
+    .container {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: 100vh;
+    }
+
+    /* === Sidebar (Playlist-style Nav) === */
+    .sidebar {
+      background-color: #000;
+      padding: 24px;
+      border-right: 1px solid #282828;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      color: var(--spotify-green);
+    }
+
+    .nav-links {
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-bottom: 12px;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text-primary);
+    }
+
+    /* === Main Content (Music-Player Style) === */
+    .main-content {
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    /* === About Me Section === */
+    .about-header {
+      margin-bottom: 30px;
+    }
+
+    .about-header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .about-header p.subtitle {
+      color: var(--spotify-green);
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .about-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 30px;
+      display: flex;
+      gap: 40px;
+    }
+
+    .profile-image {
+      width: 300px;
+      height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .about-content h2 {
+      color: var(--spotify-green);
+      margin-top: 0;
+    }
+
+    .skills-section {
+      margin-top: 30px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-card {
+      background-color: #282828;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .skill-card h3 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .experience-section {
+      margin-top: 40px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      margin-top: 20px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: var(--spotify-green);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 30px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--spotify-green);
+    }
+
+    .timeline-date {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .timeline-company {
+      color: var(--spotify-green);
+      margin-bottom: 10px;
+    }
+
+    /* === Responsive Design === */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .about-card {
+        flex-direction: column;
+        padding: 25px;
+      }
+
+      .profile-image {
+        width: 100%;
+        height: 100%;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <div class="logo">
+        
+        <span>Sagar</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="Projects.html"><i class="fas fa-briefcase"></i> Projects</a></li>
+        <li><a href="#" class="active"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="about-header">
+        <h1>About Me</h1>
+        <p class="subtitle">UX Designer & Creative Thinker</p>
+      </div>
+
+      <div class="about-card">
+        <img src="images/My Profile.jpg" alt="Profile Picture" class="profile-image"">
+        <div class="about-content">
+          <h2><i class="fas fa-quote-left" style="color: var(--spotify-green);"></i> My Story</h2>
+          <p>Hello! I'm Sagar Shivaji, a passionate UX designer with a strong eye for detail and a love for creating intuitive, user-centered digital experiences. My journey into design began in childhood with a deep interest in drawing, which gradually evolved into a passion for visual storytelling and user experience.</p>
+          <p>I believe in human-centered design that solves real problems while delivering delightful experiences. My approach combines analytical thinking with creative problem-solving to bridge the gap between users and technology.</p>
+
+          <div class="skills-section">
+            <h2><i class="fas fa-code"></i> My Skills</h2>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <h3><i class="fas fa-pencil-ruler"></i> UX Design</h3>
+                <p>User research, wireframing, prototyping, user testing</p>
+              </div>
+              <div class="skill-card">
+                <h3><i class="fas fa-paint-brush"></i> UI Design</h3>
+                <p>Visual design, design systems, interaction design</p>
+              </div>
+              <div class="skill-card">
+                <h3><i class="fas fa-chart-line"></i> Research</h3>
+                <p>User interviews, surveys, usability testing</p>
+              </div>
+              <div class="skill-card">
+                <h3><i class="fas fa-tools"></i> Tools</h3>
+                <p>Figma, Sketch, Adobe XD, Miro, ProtoPie</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-section">
+        <h2><i class="fas fa-briefcase"></i> Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2021 - 2025</div>
+            <h3 class="timeline-title">Bachelor of Technology </h3>
+            <p class="timeline-company">CSE(Artificial Intelligence&Machine Learning)</p>
+            <p>Specialized in Artificial Intelligence & Machine Learning with a focus on intelligent systems, model development, and data-driven problem solving.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2019 - 2021</div>
+            <h3 class="timeline-title">Class 12 – MPC (Maths, Physics, Chemistry)</h3>
+            <p class="timeline-company">Board of Intermediate Education, Telangana</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2012 - 2019</div>
+            <h3 class="timeline-title">High School</h3>
+            <p class="timeline-company">SSC Board, Telangana</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
